@@ -1,0 +1,44 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# GMAT per-case scripts are rebuilt by src/run_gmat.py
+gmat/generated/
+
+# Scratch runs (convergence checks, diagnostics) that are not part of the results
+results/scratch/
+
+# LaTeX build files
+report/*.aux
+report/*.log
+report/*.out
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+
+# Local machine paths / secrets
+.env
+
+# GMAT reference trajectories for the cross-check (large, rebuilt by src/gmat_reference.py)
+results/crosscheck/gmat_reference/
+results/crosscheck/python/*_states.npz
+
+# Machine-specific paths (template: local_settings.example.ini)
+local_settings.ini
+
+# Visual scenarios (contain absolute local paths; rebuilt by run_gmat.py --visual)
+gmat/visual/
+results/visual/
+
+# Raw screenshots (sources for cropped README/portfolio images)
+docs/media/raw/
+
+# Layout test builds (pdflatex -jobname=report_check)
+report/*_check.*
+
+# OS / editor files
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,47 @@
+# Pinned from uv.lock with: uv export --no-hashes --no-emit-project --format requirements-txt
+# pip users: python -m venv .venv, activate it, then: pip install -r requirements.txt
+certifi==2026.7.22
+    # via skyfield
+contourpy==1.4.0
+    # via matplotlib
+cycler==0.12.1
+    # via matplotlib
+fonttools==4.66.1
+    # via matplotlib
+jplephem==2.24
+    # via skyfield
+kiwisolver==1.5.1
+    # via matplotlib
+matplotlib==3.11.2
+    # via ntu-ground-contact-analysis
+numpy==2.5.3
+    # via
+    #   contourpy
+    #   jplephem
+    #   matplotlib
+    #   ntu-ground-contact-analysis
+    #   pandas
+    #   scipy
+    #   skyfield
+packaging==26.3
+    # via matplotlib
+pandas==3.0.6
+    # via ntu-ground-contact-analysis
+pillow==12.3.0
+    # via matplotlib
+pyparsing==3.3.3
+    # via matplotlib
+python-dateutil==2.9.0.post0
+    # via
+    #   matplotlib
+    #   pandas
+scipy==1.18.1
+    # via ntu-ground-contact-analysis
+sgp4==2.27
+    # via skyfield
+six==1.17.0
+    # via python-dateutil
+skyfield==1.55
+    # via ntu-ground-contact-analysis
+tzdata==2026.4 ; sys_platform == 'emscripten' or sys_platform == 'win32'
+    # via pandas

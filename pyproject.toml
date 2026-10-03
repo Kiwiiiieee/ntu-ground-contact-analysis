@@ -1,0 +1,17 @@
+[project]
+name = "ntu-ground-contact-analysis"
+version = "0.1.0"
+description = "How LEO altitude and inclination change daily contact time with NTU's ground station (GMAT + Python)"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "skyfield",
+    "scipy>=1.18.1",
+]
+
+[tool.uv]
+# Analysis scripts only, not an installable package.
+package = false
