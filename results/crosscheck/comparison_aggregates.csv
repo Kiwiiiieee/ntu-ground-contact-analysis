@@ -1,0 +1,61 @@
+case,id,metric,gmat,python,diff,tolerance,result
+h500_i0_raan0_el10,A1,passes in window,99.000000,99.000000,0.000000,identical,PASS
+h500_i0_raan0_el10,A2,n_boundary_passes,1.000000,1.000000,0.000000,identical,PASS
+h500_i0_raan0_el10,A3,contact_min_per_day,109.697533,109.697463,-0.000070,<= 0.5 %,PASS
+h500_i0_raan0_el10,A4,mean_pass_min,7.745981,7.745976,-0.000005,<= 0.5 %,PASS
+h500_i0_raan0_el10,A5,max_pass_min,7.871065,7.871060,-0.000005,<= 1 s,PASS
+h500_i0_raan0_el10,A6,longest_gap_h,1.555952,1.555952,0.000000,<= 2 s,PASS
+h500_i0_raan0_el5,A1,passes in window,99.000000,99.000000,0.000000,identical,PASS
+h500_i0_raan0_el5,A2,n_boundary_passes,1.000000,1.000000,0.000000,identical,PASS
+h500_i0_raan0_el5,A3,contact_min_per_day,137.363600,137.363558,-0.000042,<= 0.5 %,PASS
+h500_i0_raan0_el5,A4,mean_pass_min,9.692345,9.692341,-0.000004,<= 0.5 %,PASS
+h500_i0_raan0_el5,A5,max_pass_min,9.826533,9.826528,-0.000004,<= 1 s,PASS
+h500_i0_raan0_el5,A6,longest_gap_h,1.523711,1.523711,0.000000,<= 2 s,PASS
+h500_i45_raan0_el10,A1,passes in window,28.000000,28.000000,0.000000,identical,PASS
+h500_i45_raan0_el10,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h500_i45_raan0_el10,A3,contact_min_per_day,23.431490,23.431479,-0.000012,<= 0.5 %,PASS
+h500_i45_raan0_el10,A4,mean_pass_min,5.857874,5.857870,-0.000004,<= 0.5 %,PASS
+h500_i45_raan0_el10,A5,max_pass_min,6.715302,6.715319,0.000017,<= 1 s,PASS
+h500_i45_raan0_el10,A6,longest_gap_h,10.069603,10.069605,0.000001,<= 2 s,PASS
+h500_i45_raan0_el5,A1,passes in window,28.000000,28.000000,0.000000,identical,PASS
+h500_i45_raan0_el5,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h500_i45_raan0_el5,A3,contact_min_per_day,32.884593,32.884581,-0.000012,<= 0.5 %,PASS
+h500_i45_raan0_el5,A4,mean_pass_min,8.221147,8.221145,-0.000002,<= 0.5 %,PASS
+h500_i45_raan0_el5,A5,max_pass_min,8.815645,8.815658,0.000013,<= 1 s,PASS
+h500_i45_raan0_el5,A6,longest_gap_h,10.027839,10.027840,0.000001,<= 2 s,PASS
+h500_i51p6_raan0_el10,A1,passes in window,28.000000,28.000000,0.000000,identical,PASS
+h500_i51p6_raan0_el10,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h500_i51p6_raan0_el10,A3,contact_min_per_day,21.636633,21.636620,-0.000014,<= 0.5 %,PASS
+h500_i51p6_raan0_el10,A4,mean_pass_min,5.409159,5.409155,-0.000004,<= 0.5 %,PASS
+h500_i51p6_raan0_el10,A5,max_pass_min,6.432675,6.432696,0.000022,<= 1 s,PASS
+h500_i51p6_raan0_el10,A6,longest_gap_h,10.093380,10.093381,0.000001,<= 2 s,PASS
+h500_i51p6_raan0_el5,A1,passes in window,28.000000,28.000000,0.000000,identical,PASS
+h500_i51p6_raan0_el5,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h500_i51p6_raan0_el5,A3,contact_min_per_day,31.550193,31.550184,-0.000009,<= 0.5 %,PASS
+h500_i51p6_raan0_el5,A4,mean_pass_min,7.887548,7.887546,-0.000002,<= 0.5 %,PASS
+h500_i51p6_raan0_el5,A5,max_pass_min,8.624918,8.624935,0.000016,<= 1 s,PASS
+h500_i51p6_raan0_el5,A6,longest_gap_h,10.049010,10.049011,0.000001,<= 2 s,PASS
+h800_i45_raan0_el10,A1,passes in window,28.000000,28.000000,0.000000,identical,PASS
+h800_i45_raan0_el10,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h800_i45_raan0_el10,A3,contact_min_per_day,35.509357,35.509382,0.000025,<= 0.5 %,PASS
+h800_i45_raan0_el10,A4,mean_pass_min,8.877340,8.877345,0.000005,<= 0.5 %,PASS
+h800_i45_raan0_el10,A5,max_pass_min,11.039411,11.039404,-0.000006,<= 1 s,PASS
+h800_i45_raan0_el10,A6,longest_gap_h,10.698674,10.698675,0.000001,<= 2 s,PASS
+h800_i45_raan0_el5,A1,passes in window,33.000000,33.000000,0.000000,identical,PASS
+h800_i45_raan0_el5,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h800_i45_raan0_el5,A3,contact_min_per_day,50.804826,50.804829,0.000003,<= 0.5 %,PASS
+h800_i45_raan0_el5,A4,mean_pass_min,10.776782,10.776782,-0.000000,<= 0.5 %,PASS
+h800_i45_raan0_el5,A5,max_pass_min,13.283603,13.283598,-0.000005,<= 1 s,PASS
+h800_i45_raan0_el5,A6,longest_gap_h,10.653919,10.653920,0.000001,<= 2 s,PASS
+h600_iSSO_raan0_el10,A1,passes in window,17.000000,17.000000,0.000000,identical,PASS
+h600_iSSO_raan0_el10,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h600_iSSO_raan0_el10,A3,contact_min_per_day,17.130643,17.130633,-0.000010,<= 0.5 %,PASS
+h600_iSSO_raan0_el10,A4,mean_pass_min,7.053793,7.053790,-0.000002,<= 0.5 %,PASS
+h600_iSSO_raan0_el10,A5,max_pass_min,8.393004,8.393003,-0.000001,<= 1 s,PASS
+h600_iSSO_raan0_el10,A6,longest_gap_h,11.962449,11.962449,0.000001,<= 2 s,PASS
+h600_iSSO_raan0_el5,A1,passes in window,20.000000,20.000000,0.000000,identical,PASS
+h600_iSSO_raan0_el5,A2,n_boundary_passes,0.000000,0.000000,0.000000,identical,PASS
+h600_iSSO_raan0_el5,A3,contact_min_per_day,24.663857,24.663858,0.000001,<= 0.5 %,PASS
+h600_iSSO_raan0_el5,A4,mean_pass_min,8.632351,8.632350,-0.000001,<= 0.5 %,PASS
+h600_iSSO_raan0_el5,A5,max_pass_min,10.302551,10.302551,-0.000000,<= 1 s,PASS
+h600_iSSO_raan0_el5,A6,longest_gap_h,11.917977,11.917978,0.000001,<= 2 s,PASS
