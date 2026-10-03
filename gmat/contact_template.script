@@ -1,0 +1,96 @@
+%----------------------------------------------------------------------------
+% NTU ground-contact study: one orbit per run, both elevation masks.
+%
+% Placeholders in double curly braces are filled by src/run_gmat.py from src/cases.py.
+% Do not edit the generated scripts in gmat/generated/; edit this file.
+%
+% Model: two-body + J2 (EGM96 truncated to degree 2, order 0), no drag,
+% no third bodies, no SRP. Circular orbit defined by osculating elements.
+% GMAT syntax note: one assignment per line.
+%----------------------------------------------------------------------------
+
+%------------------------------ Spacecraft ----------------------------------
+Create Spacecraft Sat;
+Sat.DateFormat = UTCGregorian;
+Sat.Epoch = '{{EPOCH_UTC}}';
+Sat.CoordinateSystem = EarthMJ2000Eq;
+Sat.DisplayStateType = Keplerian;
+Sat.SMA = {{SMA_KM}};
+Sat.ECC = {{ECC}};
+Sat.INC = {{INC_DEG}};
+Sat.RAAN = {{RAAN_DEG}};
+Sat.AOP = {{AOP_DEG}};
+Sat.TA = {{TA_DEG}};
+
+%------------------------------ Ground stations -----------------------------
+% Approximate NTU coordinates, geodetic on the WGS-84-like ellipsoid.
+% Two identical stations that differ only in elevation mask, so both masks
+% are evaluated on the same propagated trajectory in a single run.
+Create GroundStation NTU_A;
+NTU_A.CentralBody = Earth;
+NTU_A.StateType = Spherical;
+NTU_A.HorizonReference = Ellipsoid;
+NTU_A.Location1 = {{STATION_LAT_DEG}};
+NTU_A.Location2 = {{STATION_LON_DEG}};
+NTU_A.Location3 = {{STATION_ALT_KM}};
+NTU_A.MinimumElevationAngle = {{MIN_EL_A_DEG}};
+
+Create GroundStation NTU_B;
+NTU_B.CentralBody = Earth;
+NTU_B.StateType = Spherical;
+NTU_B.HorizonReference = Ellipsoid;
+NTU_B.Location1 = {{STATION_LAT_DEG}};
+NTU_B.Location2 = {{STATION_LON_DEG}};
+NTU_B.Location3 = {{STATION_ALT_KM}};
+NTU_B.MinimumElevationAngle = {{MIN_EL_B_DEG}};
+
+%------------------------------ Force model ---------------------------------
+Create ForceModel FM;
+FM.CentralBody = Earth;
+FM.PrimaryBodies = {Earth};
+FM.GravityField.Earth.PotentialFile = 'EGM96.cof';
+FM.GravityField.Earth.Degree = 2;
+FM.GravityField.Earth.Order = 0;
+FM.Drag = None;
+FM.SRP = Off;
+
+Create Propagator Prop;
+Prop.FM = FM;
+Prop.Type = RungeKutta89;
+Prop.MaxStep = {{MAX_STEP_S}};
+
+%------------------------------ Contact locator -----------------------------
+% Geometric visibility only (no light-time, no aberration): at LEO ranges
+% light-time is ~5 ms, far below the report's resolution of interest.
+Create ContactLocator CL_A;
+CL_A.Target = Sat;
+CL_A.Observers = {NTU_A};
+CL_A.Filename = '{{REPORT_PATH_A}}';
+CL_A.UseLightTimeDelay = false;
+CL_A.UseStellarAberration = false;
+CL_A.WriteReport = true;
+CL_A.RunMode = Automatic;
+
+Create ContactLocator CL_B;
+CL_B.Target = Sat;
+CL_B.Observers = {NTU_B};
+CL_B.Filename = '{{REPORT_PATH_B}}';
+CL_B.UseLightTimeDelay = false;
+CL_B.UseStellarAberration = false;
+CL_B.WriteReport = true;
+CL_B.RunMode = Automatic;
+
+%------------------------------ Trajectory log ------------------------------
+% Geocentric radius at every integrator step (fixed 60 s steps), used to
+% report the realised min/mean/max altitude next to the nominal altitude.
+Create ReportFile StateLog;
+StateLog.Filename = '{{STATE_PATH}}';
+StateLog.Add = {Sat.ElapsedSecs, Sat.Earth.RMAG};
+StateLog.WriteHeaders = true;
+StateLog.Precision = 12;
+
+%------------------------------ Mission -------------------------------------
+% Propagation covers the 7-day analysis window plus a margin on both sides
+% (see src/cases.py); the window itself is applied in post-processing.
+BeginMissionSequence;
+Propagate Prop(Sat) {Sat.ElapsedDays = {{PROPAGATION_DAYS}}};
